@@ -1,0 +1,26 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.formatOnSave": false,
+	"editor.formatOnPaste": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"eslint.validate": [
+		"javascript",
+		"typescript"
+	],
+	"tailwindCSS.colorDecorators": true,
+	"tailwindCSS.emmetCompletions": true,
+	"tailwindCSS.includeLanguages": {
+		"javascriptreact": "html",
+		"typescriptreact": "html",
+		"plaintext": "html"
+	},
+	"javascript.preferences.importModuleSpecifier": "relative",
+	"typescript.preferences.importModuleSpecifier": "relative"
+}

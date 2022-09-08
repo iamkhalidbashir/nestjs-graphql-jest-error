@@ -17,8 +17,21 @@ describe('AppController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .post('/graphql')
+      .send({
+        query: `{
+          getStatus {
+            status
+          }
+        }`,
+      })
       .expect(200)
-      .expect('Hello World!');
+      .expect({
+        data: {
+          getStatus: {
+            status: 'ok',
+          },
+        },
+      });
   });
 });
