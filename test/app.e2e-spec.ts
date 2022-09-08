@@ -15,22 +15,43 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('getMembers', () => {
     return request(app.getHttpServer())
       .post('/graphql')
       .send({
         query: `{
-          getStatus {
-            status
+          getMembers {
+            name
+            groups {
+              name
+            }
           }
         }`,
       })
       .expect(200)
       .expect({
         data: {
-          getStatus: {
-            status: 'ok',
-          },
+          getMembers: [],
+        },
+      });
+  });
+
+  it('getGroups', () => {
+    return request(app.getHttpServer())
+      .post('/graphql')
+      .send({
+        query: `{
+          getGroups {
+            members {
+              name
+            }
+          }
+        }`,
+      })
+      .expect(200)
+      .expect({
+        data: {
+          getGroups: [],
         },
       });
   });

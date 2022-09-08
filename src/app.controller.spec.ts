@@ -12,10 +12,17 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getStatus', () => {
-    it('should return "ok', () => {
+  describe('getMembers', () => {
+    it('should return []', () => {
       const appController = app.get(AppResolver);
-      expect(appController.getStatus()).toBe({ status: 'ok' });
+      expect(appController.getMembers()).toBe([]);
+    });
+  });
+
+  describe('getGroups', () => {
+    it('should return []', () => {
+      const appController = app.get(AppResolver);
+      expect(appController.getGroups()).toBe([]);
     });
   });
 });

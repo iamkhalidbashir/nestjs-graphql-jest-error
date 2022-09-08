@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { AppStatusDto } from './status.dto';
+import { GroupDto } from './Group.dto';
+import { MemberDto } from './Member.dto';
 
 @Injectable()
 export class AppService {
-  getStatus(): AppStatusDto {
-    return { status: 'ok' };
+  getGroups(): GroupDto[] {
+    return [];
+  }
+  getMembers(): MemberDto[] {
+    return [];
   }
 }
