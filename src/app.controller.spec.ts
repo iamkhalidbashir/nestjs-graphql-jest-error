@@ -12,10 +12,10 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getMembers', () => {
+  describe('getAdmins', () => {
     it('should return []', () => {
       const appController = app.get(AppResolver);
-      expect(appController.getMembers()).toBe([]);
+      expect(appController.getAdmins()).toBe([]);
     });
   });
 

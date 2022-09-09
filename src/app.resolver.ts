@@ -1,15 +1,14 @@
 import { Query, Resolver } from '@nestjs/graphql';
 import { AppService } from './app.service';
-import { GroupDto } from './Group.dto';
-import { MemberDto } from './Member.dto';
+import { GroupDto, AdminDto } from './dtos';
 
 @Resolver(() => GroupDto)
 export class AppResolver {
   constructor(private readonly appService: AppService) {}
 
-  @Query(() => [MemberDto])
-  getMembers(): MemberDto[] {
-    return this.appService.getMembers();
+  @Query(() => [AdminDto])
+  getAdmins(): AdminDto[] {
+    return this.appService.getAdmins();
   }
 
   @Query(() => [GroupDto])

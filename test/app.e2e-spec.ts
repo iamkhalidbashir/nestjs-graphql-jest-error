@@ -15,23 +15,20 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('getMembers', () => {
+  it('getAdmins', () => {
     return request(app.getHttpServer())
       .post('/graphql')
       .send({
         query: `{
-          getMembers {
-            name
-            groups {
-              name
-            }
+          getAdmins {
+            adminName
           }
         }`,
       })
       .expect(200)
       .expect({
         data: {
-          getMembers: [],
+          getAdmins: [],
         },
       });
   });
@@ -42,9 +39,7 @@ describe('AppController (e2e)', () => {
       .send({
         query: `{
           getGroups {
-            members {
-              name
-            }
+            groupName
           }
         }`,
       })

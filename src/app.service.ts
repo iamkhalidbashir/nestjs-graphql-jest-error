@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { GroupDto } from './Group.dto';
-import { MemberDto } from './Member.dto';
+import { GroupDto, AdminDto } from './dtos';
 
 @Injectable()
 export class AppService {
   getGroups(): GroupDto[] {
     return [];
   }
-  getMembers(): MemberDto[] {
+  getAdmins(): AdminDto[] {
     return [];
   }
 }
